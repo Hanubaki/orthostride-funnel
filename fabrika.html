@@ -73,6 +73,19 @@
       </div>
     </div>
 
+    <div class="gen-box" style="border-color:rgba(249,115,22,.6);background:linear-gradient(135deg,#431407,#0f172a);margin-bottom:18px;">
+      <h2 style="font-size:18px;font-weight:900;margin-bottom:6px;color:#fb923c;">🚨 Neden Henüz Dönüş Gelmedi &amp; 10 Dakikada Nasıl Cevap Aldırırız? (Tek-Tık Bildirim Düşürücüler)</h2>
+      <p style="font-size:12.5px;color:#fed7aa;margin-bottom:12px;line-height:1.5;">
+        <strong>1) Instagram'da:</strong> Yeni açılan hesaptan ilk mesajda <code>https://</code> linki atınca Instagram mesajı <strong>&quot;Gizlenen İstekler&quot;</strong> kutusuna atıp bildirim göndermiyor! Bildirim düşürmek için işletmenin son gönderisine aşağıdaki yorumu yapıştır veya yeni yerlere <strong>Linksiz İlk Mesaj</strong> at.<br>
+        <strong>2) WhatsApp'ta:</strong> İlk mesaj uzun ve linkli olduğu için doktorlar &quot;otomatik reklam botu&quot; sanıp geçti. Aşağıdaki 1 cümlelik <strong>&quot;Bot Değilim&quot;</strong> mesajını attığın 11 kliniğe yapıştırırsan anında mahcup olup cevap verirler:
+      </p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;">
+        <button class="btn-act btn-copy" style="background:#ea580c;color:#fff;" onclick="copyQuickReply(this, 'wa_followup')">🔥 WhatsApp 11 Kliniğe &quot;Bot Değilim&quot; Takip Mesajı</button>
+        <button class="btn-act btn-copy" style="background:#db2777;color:#fff;" onclick="copyQuickReply(this, 'ig_comment')">🔔 Instagram Son Gönderiye &quot;DM'e Bakın&quot; Yorumu</button>
+        <button class="btn-act btn-copy" style="background:#10b981;color:#052e16;" onclick="copyQuickReply(this, 'ig_nolink')">💌 Instagram Yeni Yerlere Linksiz 1. Mesaj (Spam'a Düşmez)</button>
+      </div>
+    </div>
+
     <div class="gen-box" style="border-color:rgba(16,185,129,.45);background:linear-gradient(135deg,#064e3b,#0f172a);">
       <h2 style="font-size:17px;font-weight:900;margin-bottom:6px;color:#34d399;">💬 DM'den Dönüş Yapanlara Tek-Tık Hazır Cevaplar (Kopyala &amp; Yapıştır)</h2>
       <p style="font-size:12px;color:#cbd5e1;margin-bottom:12px;">İlk mesajı bizim attığımız işletmelerde Instagram güvenlik kuralı gereği yanıtı tek tıkla buradan kopyalayıp yapıştırabilirsin (Bize ilk yazan müşterilere ise sistem otomatik yanıt verir):</p>
@@ -152,7 +165,13 @@
 
     function copyQuickReply(btn, kind) {
       let msg = "";
-      if (kind === "bot") {
+      if (kind === "wa_followup") {
+        msg = "Hocam selamlar tekrardan, üstteki mesajım hazır reklam botu gibi görünmüş olabilir kusura bakmayın :) Bizzat kliniğiniz için hazırlamıştım, bakma şansınız oldu mu?";
+      } else if (kind === "ig_comment") {
+        msg = "Merhaba, işletmeniz için hazırladığım özel çalışmayı DM istek kutunuza bıraktım bakar mısınız 🌸";
+      } else if (kind === "ig_nolink") {
+        msg = "Merhaba kolay gelsin 🌸 Randevu ve fiyat listenizle ilgili işletme sahibine ufak bir sorum olacaktı, buradan mı görüşebiliriz?";
+      } else if (kind === "bot") {
         msg = "Söyleyeceklerim :) Pazarlama / işletme yetkilinize iletebilirseniz çok sevinirim; Instagram profiliniz için hazırladığım özel canlı randevu ve kampanya sayfasını yukarıdaki linkten test edebilirsiniz 🌸";
       } else if (kind === "info") {
         msg = "Tabii! Sistem tamamen sizin işletme adınıza, kendi hizmet/fiyat listenize ve kendi WhatsApp hattınıza bağlı çalışıyor. Aylık veya yıllık hiçbir aidat yok. İstediğiniz fiyatları/paketleri bana buradan yazmanız yeterli, 10 dakikada güncelleyip kalıcı linkinizi ve kaynak kodlarınızı teslim ediyorum.";
@@ -161,7 +180,7 @@
       }
       navigator.clipboard.writeText(msg);
       const old = btn.textContent;
-      btn.textContent = "✅ Cevap Kopyalandı! DM'e Yapıştır";
+      btn.textContent = "✅ Kopyalandı! Hemen Yapıştır";
       setTimeout(() => btn.textContent = old, 2500);
     }
 
