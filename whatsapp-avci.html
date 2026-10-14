@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WhatsApp Tek-Tık Esnaf Avcısı — Günlük Nakit Paneli (350 TL / Satış)</title>
+  <style>
+    :root { --bg: #090d16; --card: #111827; --accent: #22c55e; --blue: #38bdf8; --gold: #f59e0b; --text: #f8fafc; --muted: #94a3b8; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); padding: 24px 16px 60px; }
+    .wrap { max-width: 980px; margin: 0 auto; }
+    .top-nav { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+    .nav-pill { background: #1e293b; color: #e2e8f0; text-decoration: none; padding: 8px 14px; border-radius: 8px; font-size: 13px; font-weight: 700; border: 1px solid rgba(255,255,255,0.1); }
+    .nav-pill.active { background: var(--accent); color: #052e16; }
+    h1 { font-size: 26px; font-weight: 900; margin-bottom: 8px; }
+    .sub { color: var(--muted); font-size: 14px; margin-bottom: 20px; }
+    .custom-box { background: var(--card); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 14px; padding: 18px; margin-bottom: 24px; display: grid; grid-template-columns: 1fr 1fr auto; gap: 12px; align-items: end; }
+    @media (max-width: 700px) { .custom-box { grid-template-columns: 1fr; } }
+    .custom-box label { display: block; font-size: 12px; color: var(--muted); margin-bottom: 5px; }
+    .custom-box input { width: 100%; padding: 11px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: #090d16; color: #fff; font-size: 14px; }
+    .btn-add { background: var(--blue); color: #082f49; font-weight: 800; border: none; padding: 12px 18px; border-radius: 8px; cursor: pointer; font-size: 14px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+    .lead-card { background: var(--card); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between; gap: 14px; }
+    .lead-card.sent { border-color: var(--accent); background: rgba(34, 197, 94, 0.08); }
+    .sector-tag { display: inline-block; background: rgba(245, 158, 11, 0.15); color: var(--gold); font-size: 11px; font-weight: 800; padding: 3px 8px; border-radius: 6px; margin-bottom: 6px; }
+    .biz-title { font-size: 18px; font-weight: 800; }
+    .phone-line { font-size: 13px; color: var(--muted); margin-top: 4px; font-family: monospace; }
+    .btn-row { display: flex; flex-direction: column; gap: 8px; }
+    .wa-send { background: var(--accent); color: #052e16; text-decoration: none; font-weight: 900; font-size: 14px; text-align: center; padding: 11px; border-radius: 8px; display: block; }
+    .demo-view { background: rgba(255,255,255,0.06); color: #cbd5e1; text-decoration: none; font-weight: 700; font-size: 13px; text-align: center; padding: 9px; border-radius: 8px; display: block; border: 1px solid rgba(255,255,255,0.1); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top-nav">
+      <a class="nav-pill active" href="./whatsapp-avci.html">📲 1. WhatsApp Esnaf Avcısı (350 TL)</a>
+      <a class="nav-pill" href="./seo-hub.html">🔍 2. Otomatik SEO Şablon Mağazası ($15 / 350 TL)</a>
+      <a class="nav-pill" href="./ai-reklam-portfoy.html">🎬 3. AI Reklam &amp; Storyboard Mağazası (500 TL)</a>
+    </div>
+    <h1>📲 WhatsApp Tek-Tık Esnaf Avcısı (Satış Başı 350 TL FAST)</h1>
+    <p class="sub">Gerçek sitelerden kazınmış <strong>05xx WhatsApp numaralı</strong> işletmeler. Butona bastığında işletmenin <strong>kendi adı ve kendi WhatsApp numarasıyla çalışan canlı sitesi</strong> hazır mesaj olarak açılır.</p>
+    <div class="custom-box">
+      <div><label>Yeni İşletme / Esnaf Adı</label><input id="newBiz" type="text" placeholder="Örn: Yılmaz Kombi Servisi" /></div>
+      <div><label>WhatsApp Cep Numarası (05xx...)</label><input id="newTel" type="text" placeholder="Örn: 05321234567" /></div>
+      <button class="btn-add" onclick="addCustomLead()">+ Canlı Site &amp; Mesaj Üret</button>
+    </div>
+    <div id="leadsGrid" class="grid"></div>
+  </div>
+  <script>
+    const BASE_URL = "https://hanubaki.github.io/orthostride-funnel";
+    const INITIAL_LEADS = [
+      { name: "Dr. Cinik Clinic", sector: "Saç & Estetik Kliniği", phone: "905322294618", domain: "drcinik.com" },
+      { name: "Hermes Clinics", sector: "Diş & Estetik Kliniği", phone: "905421208535", domain: "hermesclinics.com" },
+      { name: "Nişantaşı Koru Diş", sector: "Diş Kliniği", phone: "905324971117", domain: "korudis.com" },
+      { name: "Attelia Diş Kliniği", sector: "Diş Kliniği", phone: "905351164306", domain: "atteliadental.com" },
+      { name: "Estethica Klinik", sector: "Estetik & Güzellik", phone: "905497919903", domain: "estethica.com.tr" },
+      { name: "Vanity Estetik", sector: "Estetik & Güzellik", phone: "905524903720", domain: "vanityestetik.com" },
+      { name: "Dentakay Diş Kliniği", sector: "Diş Kliniği", phone: "905415008008", domain: "dentakay.com" },
+      { name: "Smile Hair Clinic", sector: "Saç Ekimi & Estetik", phone: "905491492400", domain: "smilehairclinic.com" },
+      { name: "Cosmedica Clinic", sector: "Saç Ekimi & Estetik", phone: "905016391341", domain: "cosmedica.com" },
+      { name: "Auto King Servis", sector: "Oto Bakım & Ekspertiz", phone: "905471767864", domain: "autoking.com.tr" },
+      { name: "Emsal Doğan Güzellik", sector: "Güzellik & Bakım", phone: "905052729374", domain: "emsaldogan.com.tr" },
+      { name: "San Kuaför & Güzellik", sector: "Kuaför & Güzellik", phone: "905053144538", domain: "sankuafor.com" },
+      { name: "VetArt Veteriner", sector: "Veteriner Kliniği", phone: "905362210511", domain: "vetart.com.tr" }
+    ];
+    function renderLeads() {
+      const grid = document.getElementById("leadsGrid"); grid.innerHTML = "";
+      INITIAL_LEADS.forEach((item, idx) => {
+        const demoUrl = BASE_URL + "/esnaf.html?biz=" + encodeURIComponent(item.name) + "&tel=" + item.phone;
+        const msg = "Merhaba " + item.name + " yetkilisi, Instagram ve Google'dan gelen müşterilerinizin 30 saniyede paket seçip doğrudan bu WhatsApp hattınıza hazır randevu düşürmesi için işletmenize özel canlı bir kampanya sayfası hazırladım:\n\n👉 " + demoUrl + "\n\nSayfadaki yeşil WhatsApp butonuna basarak kendi numaranızla canlı test edebilirsiniz. Beğenirseniz tüm sistemi tek seferlik 350 TL'ye hemen teslim edebilirim.";
+        const waHref = "https://wa.me/" + item.phone + "?text=" + encodeURIComponent(msg);
+        const card = document.createElement("div"); card.className = "lead-card"; card.id = "lead-" + idx;
+        card.innerHTML = '<div><span class="sector-tag">' + item.sector + '</span><div class="biz-title">' + item.name + '</div><div class="phone-line">📞 +' + item.phone + ' • ' + item.domain + '</div></div><div class="btn-row"><a class="wa-send" href="' + waHref + '" target="_blank" onclick="document.getElementById(\'lead-' + idx + '\').classList.add(\'sent\')">📲 WhatsApp\'tan Gönder (350 TL) →</a><a class="demo-view" href="' + demoUrl + '" target="_blank">👁️ İşletmeye Özel Canlı Siteyi Gör</a></div>';
+        grid.appendChild(card);
+      });
+    }
+    function addCustomLead() {
+      const name = document.getElementById("newBiz").value.trim();
+      let tel = document.getElementById("newTel").value.replace(/\D/g, "");
+      if (!name || !tel) return alert("Lütfen işletme adı ve 05xx telefon girin.");
+      if (tel.startsWith("05")) tel = "9" + tel; else if (tel.startsWith("5")) tel = "90" + tel;
+      INITIAL_LEADS.unshift({ name: name, sector: "Özel Eklenen İşletme", phone: tel, domain: "Google Haritalar" });
+      renderLeads();
+    }
+    renderLeads();
+  </script>
+</body>
+</html>

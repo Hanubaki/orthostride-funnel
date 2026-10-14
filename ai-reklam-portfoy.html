@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yapay Zeka (AI) Viral Reklam &amp; Video Storyboard Portföyü — 500 TL Hazır Paket</title>
+  <style>
+    :root { --bg: #090d16; --card: #111827; --accent: #a855f7; --green: #22c55e; --text: #f8fafc; --muted: #94a3b8; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); padding: 24px 16px 60px; line-height: 1.5; }
+    .wrap { max-width: 980px; margin: 0 auto; }
+    .top-nav { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+    .nav-pill { background: #1e293b; color: #e2e8f0; text-decoration: none; padding: 8px 14px; border-radius: 8px; font-size: 13px; font-weight: 700; border: 1px solid rgba(255,255,255,0.1); }
+    .nav-pill.active { background: var(--accent); color: #fff; }
+    .hero { background: linear-gradient(135deg, #3b0764, #111827); border: 2px solid var(--accent); border-radius: 18px; padding: 28px; margin-bottom: 24px; }
+    h1 { font-size: 26px; font-weight: 900; margin-bottom: 10px; }
+    .sub { color: #e9d5ff; font-size: 15px; margin-bottom: 18px; }
+    .cta-btn { display: inline-block; background: var(--green); color: #052e16; font-weight: 900; font-size: 15px; padding: 13px 22px; border-radius: 10px; text-decoration: none; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 18px; }
+    .ad-card { background: var(--card); border: 1px solid rgba(168, 85, 247, 0.35); border-radius: 14px; overflow: hidden; }
+    .ad-card img { width: 100%; height: 180px; object-fit: cover; }
+    .ad-body { padding: 16px; }
+    .ad-tag { font-size: 11px; font-weight: 800; color: #c084fc; text-transform: uppercase; }
+    .ad-title { font-size: 16px; font-weight: 800; margin: 6px 0; }
+    .scene-box { background: #090d16; border-radius: 8px; padding: 10px; font-size: 12px; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top-nav">
+      <a class="nav-pill" href="./whatsapp-avci.html">📲 1. WhatsApp Esnaf Avcısı (350 TL)</a>
+      <a class="nav-pill" href="./seo-hub.html">🔍 2. Otomatik SEO Şablon Mağazası ($15 / 350 TL)</a>
+      <a class="nav-pill active" href="./ai-reklam-portfoy.html">🎬 3. AI Reklam &amp; Storyboard Mağazası (500 TL)</a>
+    </div>
+    <div class="hero">
+      <h1>🎬 <span class="brand-slot">Markanız</span> İçin Viral AI Reklam &amp; 3D Animasyon Kurguları (500 TL)</h1>
+      <p class="sub">Klasik videolardan 4 kat daha yüksek tıklama oranı (CTR) getiren Pixar/3D Görselleştirme, Öncesi/Sonrası Karşılaştırma ve Ürün Odaklı AI Reklam Paketi.</p>
+      <a id="orderBtn" class="cta-btn" href="mailto:berkeakdemir5855@gmail.com?subject=500%20TL%20AI%20REKLAM%20PAKETI">⚡ 3 AI Reklam + Satış Sayfası Paketini Al (500 TL — FAST İle Teslim) →</a>
+    </div>
+    <div class="grid">
+      <div class="ad-card"><img src="./assets/ad-hook-frame.jpg" /><div class="ad-body"><div class="ad-tag">Kreatif #1 • 3D Pixar Sorun Kancası</div><div class="ad-title">"İçerideki Gizli Düşman" 3D Animasyon Kurgusu</div><div class="scene-box">Müşterinin yaşadığı sorunu 3D animasyon karakteriyle ilk 3 saniyede görselleştirerek kaydırmayı durdurur.</div></div></div>
+      <div class="ad-card"><img src="./assets/before-after-foot.jpg" /><div class="ad-body"><div class="ad-tag">Kreatif #2 • Yan Yana Klinik Karşılaştırma</div><div class="ad-title">"Eski Yöntem vs. Yeni Mekanizma" Reklamı</div><div class="scene-box">Sıradan rakip ürünün yarattığı sorun ile <span class="brand-slot">Markanız</span> çözümünü yan yana kanıtlar.</div></div></div>
+      <div class="ad-card"><img src="./assets/hero-shoe.jpg" /><div class="ad-body"><div class="ad-tag">Kreatif #3 • Uzman Otorite Sunumu</div><div class="ad-title">Stüdyo Kalitesinde Ürün + 3'lü Paket Teklifi</div><div class="scene-box">Ürün detayları + 60 gün garanti vurgusu + Advertorial satış sayfasına doğrudan yönlendirme.</div></div></div>
+    </div>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const marka = params.get("marka") || params.get("brand") || "Markanız";
+    document.querySelectorAll(".brand-slot").forEach(el => el.textContent = marka);
+  </script>
+</body>
+</html>

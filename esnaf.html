@@ -29,8 +29,8 @@
 </head>
 <body>
   <div class="claim-bar">
-    <span>⚡ <strong class="biz-name">İşletmeniz</strong> İçin Hazır Kampanya &amp; Randevu Sitesi (Sadece <strong>250 TL</strong>)</span>
-    <a id="claimTopBtn" class="claim-btn" href="mailto:berkeakdemir5855@gmail.com">250 TL'ye Hemen Al →</a>
+    <span>⚡ <strong class="biz-name">İşletmeniz</strong> İçin Hazır Kampanya &amp; Randevu Sitesi (Sadece <strong>350 TL</strong>)</span>
+    <a id="claimTopBtn" class="claim-btn" href="mailto:berkeakdemir5855@gmail.com">Hemen Al (350 TL) →</a>
   </div>
   <div class="container">
     <div class="badge-row">⭐ 4.9 / 5.0 Müşteri Memnuniyeti • <span class="biz-name">Merkezimiz</span></div>
@@ -56,13 +56,19 @@
     function selectPkg(el, name) { document.querySelectorAll(".pkg").forEach(p => p.classList.remove("active")); el.classList.add("active"); chosenPkg = name; }
     const params = new URLSearchParams(window.location.search);
     const biz = params.get("biz") || "İşletmeniz";
+    const tel = params.get("tel") || "";
     document.querySelectorAll(".biz-name").forEach(el => el.textContent = biz);
     document.title = biz + " — Özel Kampanya & Hızlı WhatsApp Randevu";
-    document.getElementById("claimTopBtn").href = "mailto:berkeakdemir5855@gmail.com?subject=" + encodeURIComponent("ALMAK İSTİYORUM (250 TL) - " + biz + " Hazır Kampanya Sitesi") + "&body=" + encodeURIComponent("Merhaba Berke,\n\n" + biz + " için hazırladığın canlı kampanya ve WhatsApp randevu sayfasını (250 TL) satın almak istiyoruz. Havale/FAST için IBAN bilgini paylaşabilir misin?");
+    document.getElementById("claimTopBtn").href = "mailto:berkeakdemir5855@gmail.com?subject=" + encodeURIComponent("ALMAK İSTİYORUM - " + biz + " Hazır Kampanya Sitesi") + "&body=" + encodeURIComponent("Merhaba Berke,\n\n" + biz + " için hazırladığın canlı kampanya ve WhatsApp randevu sayfasını satın almak istiyoruz. Havale/FAST için IBAN bilgini paylaşabilir misin?");
     function testWhatsApp() {
       const name = document.getElementById("custName").value || "Müşteri";
       const time = document.getElementById("custTime").value;
-      alert("Canlı Demo (" + biz + "): Müşteri butona bastığında doğrudan sizin WhatsApp numaranıza şu hazır mesaj düşer:\n\n'Merhaba " + biz + ", ben " + name + ". " + chosenPkg + " için " + time + " randevu almak istiyorum.'");
+      const msg = "Merhaba " + biz + ", ben " + name + ". " + chosenPkg + " için (" + time + ") randevu almak istiyorum.";
+      if (tel) {
+        window.open("https://wa.me/" + tel + "?text=" + encodeURIComponent(msg), "_blank");
+      } else {
+        alert("Canlı Demo (" + biz + "): Müşteri butona bastığında doğrudan sizin WhatsApp numaranıza şu hazır mesaj düşer:\n\n'" + msg + "'");
+      }
     }
   </script>
 </body>
