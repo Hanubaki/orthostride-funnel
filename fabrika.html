@@ -73,8 +73,19 @@
       </div>
     </div>
 
+    <div class="gen-box" style="border-color:rgba(16,185,129,.45);background:linear-gradient(135deg,#064e3b,#0f172a);">
+      <h2 style="font-size:17px;font-weight:900;margin-bottom:6px;color:#34d399;">💬 DM'den Dönüş Yapanlara Tek-Tık Hazır Cevaplar (Kopyala &amp; Yapıştır)</h2>
+      <p style="font-size:12px;color:#cbd5e1;margin-bottom:12px;">İlk mesajı bizim attığımız işletmelerde Instagram güvenlik kuralı gereği yanıtı tek tıkla buradan kopyalayıp yapıştırabilirsin (Bize ilk yazan müşterilere ise sistem otomatik yanıt verir):</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;">
+        <button class="btn-act btn-copy" style="background:#059669;" onclick="copyQuickReply(this, 'bot')">🤖 Bot / Karşılama Çıkarsa (Yetkiliye Bağla)</button>
+        <button class="btn-act btn-copy" style="background:#2563eb;" onclick="copyQuickReply(this, 'info')">✨ &quot;Nasıl Çalışıyor / Değişir mi?&quot; Cevabı</button>
+        <button class="btn-act btn-copy" style="background:#d97706;" onclick="copyQuickReply(this, 'iban')">💳 &quot;Alıyoruz / IBAN Atın&quot; (VakıfBank Kapanış)</button>
+      </div>
+    </div>
+
     <h2 style="font-size:20px;font-weight:900;margin-bottom:6px;">🎯 %100 Aktif 13 Küçük İşletme Instagram Profili (Tek Tıkla Kopyala &amp; Profilini Aç)</h2>
     <p style="font-size:13px;color:#94a3b8;margin-bottom:14px;">Yeşil butona bastığında mesaj otomatik kopyalanır ve işletmenin gerçek Instagram profili yeni sekmede açılır:</p>
+
 
     <div class="grid" id="presetGrid"></div>
   </div>
@@ -136,6 +147,21 @@
       navigator.clipboard.writeText(t);
       const old = btn.textContent;
       btn.textContent = "✅ Kopyalandı! Instagram DM'e Yapıştır";
+      setTimeout(() => btn.textContent = old, 2500);
+    }
+
+    function copyQuickReply(btn, kind) {
+      let msg = "";
+      if (kind === "bot") {
+        msg = "Söyleyeceklerim :) Pazarlama / işletme yetkilinize iletebilirseniz çok sevinirim; Instagram profiliniz için hazırladığım özel canlı randevu ve kampanya sayfasını yukarıdaki linkten test edebilirsiniz 🌸";
+      } else if (kind === "info") {
+        msg = "Tabii! Sistem tamamen sizin işletme adınıza, kendi hizmet/fiyat listenize ve kendi WhatsApp hattınıza bağlı çalışıyor. Aylık veya yıllık hiçbir aidat yok. İstediğiniz fiyatları/paketleri bana buradan yazmanız yeterli, 10 dakikada güncelleyip kalıcı linkinizi ve kaynak kodlarınızı teslim ediyorum.";
+      } else if (kind === "iban") {
+        msg = "Harika, hemen işletmenize özel son ayarları tamamlıyorum! Tek seferlik ödemeyi resmi güvenli ödeme sayfamızdan (VakıfBank FAST / Havale — Alıcı: Yusuf Akdemir) gerçekleştirebilirsiniz:\n\n👉 Ödeme & Teslimat Sayfası: https://hanubaki.github.io/orthostride-funnel/odeme.html?tutar=350TL\n\nDekontu veya 'Ödedim' bilgisini buradan ilettiğiniz an kalıcı biyografi linkinizi ve tüm sistem dosyalarınızı hemen teslim ediyorum 🙏";
+      }
+      navigator.clipboard.writeText(msg);
+      const old = btn.textContent;
+      btn.textContent = "✅ Cevap Kopyalandı! DM'e Yapıştır";
       setTimeout(() => btn.textContent = old, 2500);
     }
 
