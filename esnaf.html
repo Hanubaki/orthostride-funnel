@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Özel Kampanya & Hızlı WhatsApp Randevu Sayfası</title>
+  <style>
+    :root { --bg: #0b0f19; --card: #131b2e; --accent: #10b981; --gold: #f59e0b; --text: #f8fafc; --muted: #94a3b8; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; padding-top: 56px; padding-bottom: 60px; }
+    .claim-bar { position: fixed; top: 0; left: 0; right: 0; z-index: 9999; background: linear-gradient(90deg, #064e3b, #0f172a); border-bottom: 2px solid var(--accent); padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 13px; box-shadow: 0 4px 16px rgba(0,0,0,0.45); }
+    .claim-btn { background: var(--gold); color: #000; font-weight: 800; padding: 7px 14px; border-radius: 8px; text-decoration: none; white-space: nowrap; font-size: 13px; }
+    .container { max-width: 560px; margin: 0 auto; padding: 20px 16px; }
+    .badge-row { display: inline-flex; align-items: center; gap: 8px; background: rgba(16, 185, 129, 0.14); border: 1px solid rgba(16, 185, 129, 0.35); color: #34d399; padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 700; margin-bottom: 14px; }
+    h1 { font-size: 27px; line-height: 1.25; font-weight: 900; margin-bottom: 12px; }
+    .sub { color: var(--muted); font-size: 15px; margin-bottom: 20px; }
+    .offer-card { background: var(--card); border: 2px solid rgba(16, 185, 129, 0.4); border-radius: 16px; padding: 22px; margin-bottom: 18px; box-shadow: 0 12px 32px rgba(0,0,0,0.35); }
+    .timer-box { background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.4); color: #fbbf24; padding: 10px 14px; border-radius: 10px; font-size: 14px; font-weight: 700; text-align: center; margin-bottom: 16px; }
+    .pkg { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 14px; margin-bottom: 12px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+    .pkg.active { border-color: var(--accent); background: rgba(16, 185, 129, 0.12); }
+    .pkg-title { font-weight: 800; font-size: 15px; }
+    .pkg-desc { font-size: 13px; color: var(--muted); margin-top: 3px; }
+    .pkg-badge { background: var(--accent); color: #022c22; font-weight: 800; font-size: 11px; padding: 4px 8px; border-radius: 6px; }
+    .form-group { margin-top: 14px; }
+    .form-group label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 5px; }
+    .form-group input, .form-group select { width: 100%; padding: 12px 14px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.15); background: #090d16; color: #fff; font-size: 15px; }
+    .wa-btn { display: block; width: 100%; margin-top: 16px; background: var(--accent); color: #022c22; font-weight: 900; font-size: 16px; text-align: center; padding: 15px; border-radius: 12px; border: none; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div class="claim-bar">
+    <span>⚡ <strong class="biz-name">İşletmeniz</strong> İçin Hazır Kampanya &amp; Randevu Sitesi (Sadece <strong>250 TL</strong>)</span>
+    <a id="claimTopBtn" class="claim-btn" href="mailto:berkeakdemir5855@gmail.com">250 TL'ye Hemen Al →</a>
+  </div>
+  <div class="container">
+    <div class="badge-row">⭐ 4.9 / 5.0 Müşteri Memnuniyeti • <span class="biz-name">Merkezimiz</span></div>
+    <h1><span class="biz-name">Merkezimiz</span> İle 30 Saniyede Online Randevu &amp; %40 Tanışma İndirimi</h1>
+    <p class="sub">Instagram ve Google'dan gelen müşterilerinizi kaybetmeyin: Tek tıkla paket seçimi ve doğrudan WhatsApp hattınıza düşen hazır randevu sistemi.</p>
+    <div class="offer-card">
+      <div class="timer-box">🔥 Bu Haftaya Özel Kontenjan: Son 4 İndirimli Randevu Hakkı!</div>
+      <div class="pkg active" onclick="selectPkg(this, 'VIP Tanışma Paketi (%40 İndirimli)')">
+        <div><div class="pkg-title">1. VIP Tanışma &amp; Analiz Paketi</div><div class="pkg-desc">İlk randevuya özel %40 indirim + ücretsiz ön görüşme</div></div>
+        <span class="pkg-badge">POPÜLER</span>
+      </div>
+      <div class="pkg" onclick="selectPkg(this, '3 Seanslık Avantaj Paketi')">
+        <div><div class="pkg-title">2. 3'lü Tam Bakım &amp; Uygulama Paketi</div><div class="pkg-desc">2 Seans fiyatına 3 tam uygulama + öncelikli randevu</div></div>
+        <span class="pkg-badge" style="background:#38bdf8;">AVANTAJLI</span>
+      </div>
+      <div class="form-group"><label>Adınız Soyadınız</label><input id="custName" type="text" placeholder="Örn: Ayşe Yılmaz" /></div>
+      <div class="form-group"><label>Tercih Ettiğiniz Gün / Saat</label><select id="custTime"><option>Bugün / En Erken Uygun Saat</option><option>Yarın Öğleden Önce (10:00 - 13:00)</option><option>Yarın Öğleden Sonra (14:00 - 19:00)</option><option>Hafta Sonu Randevusu</option></select></div>
+      <button class="wa-btn" onclick="testWhatsApp()">📲 WhatsApp İle Anında Randevu Oluştur →</button>
+    </div>
+  </div>
+  <script>
+    let chosenPkg = "VIP Tanışma Paketi (%40 İndirimli)";
+    function selectPkg(el, name) { document.querySelectorAll(".pkg").forEach(p => p.classList.remove("active")); el.classList.add("active"); chosenPkg = name; }
+    const params = new URLSearchParams(window.location.search);
+    const biz = params.get("biz") || "İşletmeniz";
+    document.querySelectorAll(".biz-name").forEach(el => el.textContent = biz);
+    document.title = biz + " — Özel Kampanya & Hızlı WhatsApp Randevu";
+    document.getElementById("claimTopBtn").href = "mailto:berkeakdemir5855@gmail.com?subject=" + encodeURIComponent("ALMAK İSTİYORUM (250 TL) - " + biz + " Hazır Kampanya Sitesi") + "&body=" + encodeURIComponent("Merhaba Berke,\n\n" + biz + " için hazırladığın canlı kampanya ve WhatsApp randevu sayfasını (250 TL) satın almak istiyoruz. Havale/FAST için IBAN bilgini paylaşabilir misin?");
+    function testWhatsApp() {
+      const name = document.getElementById("custName").value || "Müşteri";
+      const time = document.getElementById("custTime").value;
+      alert("Canlı Demo (" + biz + "): Müşteri butona bastığında doğrudan sizin WhatsApp numaranıza şu hazır mesaj düşer:\n\n'Merhaba " + biz + ", ben " + name + ". " + chosenPkg + " için " + time + " randevu almak istiyorum.'");
+    }
+  </script>
+</body>
+</html>
