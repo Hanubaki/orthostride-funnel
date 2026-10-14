@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WhatsApp Tek-Tık Esnaf Avcısı — %100 Doğrulanmış Resmi wa.me Numaraları</title>
   <style>
     :root { --bg: #090d16; --card: #111827; --accent: #22c55e; --blue: #38bdf8; --gold: #f59e0b; --text: #f8fafc; --muted: #94a3b8; }
@@ -13,6 +14,11 @@
     .nav-pill.active { background: var(--accent); color: #052e16; }
     h1 { font-size: 26px; font-weight: 900; margin-bottom: 8px; }
     .sub { color: var(--muted); font-size: 14px; margin-bottom: 20px; }
+    .bot-box { background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.4); border-radius: 14px; padding: 16px 18px; margin-bottom: 20px; }
+    .bot-box h3 { font-size: 15px; color: #fbbf24; margin-bottom: 6px; }
+    .bot-box p { font-size: 13px; color: #e2e8f0; line-height: 1.5; margin-bottom: 10px; }
+    .reply-copy { background: #090d16; border: 1px dashed rgba(255,255,255,0.2); border-radius: 8px; padding: 10px 12px; font-size: 13px; color: #a7f3d0; margin-bottom: 8px; }
+    .btn-copy { background: var(--gold); color: #090d16; font-weight: 800; border: none; padding: 8px 14px; border-radius: 7px; cursor: pointer; font-size: 12px; }
     .custom-box { background: var(--card); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 14px; padding: 18px; margin-bottom: 24px; display: grid; grid-template-columns: 1fr 1fr auto; gap: 12px; align-items: end; }
     @media (max-width: 700px) { .custom-box { grid-template-columns: 1fr; } }
     .custom-box label { display: block; font-size: 12px; color: var(--muted); margin-bottom: 5px; }
@@ -22,6 +28,7 @@
     .lead-card { background: var(--card); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between; gap: 14px; }
     .lead-card.sent { border-color: var(--accent); background: rgba(34, 197, 94, 0.08); }
     .sector-tag { display: inline-block; background: rgba(34, 197, 94, 0.15); color: #4ade80; font-size: 11px; font-weight: 800; padding: 3px 8px; border-radius: 6px; margin-bottom: 6px; }
+    .sector-tag.corp { background: rgba(245, 158, 11, 0.15); color: #fbbf24; }
     .biz-title { font-size: 18px; font-weight: 800; }
     .phone-line { font-size: 13px; color: var(--muted); margin-top: 4px; font-family: monospace; }
     .btn-row { display: flex; flex-direction: column; gap: 8px; }
@@ -37,51 +44,91 @@
       <a class="nav-pill" href="./ai-reklam-portfoy.html">3. AI Reklam &amp; Storyboard Mağazası (500 TL)</a>
       <a class="nav-pill" href="./odeme.html">Ödeme Sayfası (VakıfBank IBAN)</a>
     </div>
+
     <h1>WhatsApp Tek-Tık Esnaf Avcısı (%100 Resmi wa.me Doğrulanmış Hatlar)</h1>
-    <p class="sub">Aşağıdaki tüm numaralar işletmelerin kendi web sitelerindeki <strong>resmi WhatsApp (wa.me/) ve tel: butonlarından</strong> doğrudan doğrulanmıştır.</p>
+    <p class="sub">İlk sıradaki <strong>🟢 DOĞRUDAN SAHİBİ / BUTİK ESNAF</strong> hatlarında bot yoktur, mesaj doğrudan işletme sahibine/hekime düşer.</p>
+
+    <div class="bot-box">
+      <h3>🤖 Otomatik Bot / Sekreter "Hangi tedavi ile ilgileniyorsunuz?" Diye Yanıt Verirse Ne Yazılır?</h3>
+      <p>Bazı kliniklerde ilk mesaja otomatik karşılama botu yanıt verir. Botu aşıp mesajı doğrudan <strong>Dijital Pazarlama / Klinik Yöneticisine</strong> ilettirmek için şu 2. mesajı kopyalayıp yapıştır:</p>
+      <div class="reply-copy" id="botReplyText">Merhaba, hasta randevusu için değil; kliniğinizin Instagram ve Google reklamlarından gelen hastaların WhatsApp hattınıza hazır paket seçerek düşmesi için hazırladığım canlı kampanya ekranını (üstteki link) Dijital Pazarlama / Sosyal Medya yetkilinize veya klinik yöneticinize iletebilir misiniz? Tek seferlik 350 TL'ye tüm sistemi devrediyorum.</div>
+      <button class="btn-copy" onclick="navigator.clipboard.writeText(document.getElementById('botReplyText').innerText); this.innerText='✅ Kopyalandı! WhatsApp\'a Yapıştır';">📋 Bot Aşma Yanıtını Kopyala</button>
+    </div>
+
     <div class="custom-box">
-      <div><label>Yeni İşletme / Esnaf Adı</label><input id="newBiz" type="text" placeholder="Örn: Yılmaz Kombi Servisi" /></div>
-      <div><label>WhatsApp Cep Numarası (05xx...)</label><input id="newTel" type="text" placeholder="Örn: 05321234567" /></div>
+      <div>
+        <label>Yeni İşletme / Esnaf Adı (Google Haritalar'dan herhangi bir yer)</label>
+        <input id="newBiz" type="text" placeholder="Örn: Yılmaz Kombi Servisi" />
+      </div>
+      <div>
+        <label>WhatsApp Cep Numarası (05xx...)</label>
+        <input id="newTel" type="text" placeholder="Örn: 05321234567" />
+      </div>
       <button class="btn-add" onclick="addCustomLead()">+ Canlı Site &amp; Mesaj Üret</button>
     </div>
+
     <div id="leadsGrid" class="grid"></div>
   </div>
+
   <script>
     const BASE_URL = "https://hanubaki.github.io/orthostride-funnel";
     const INITIAL_LEADS = [
-      { name: "Esdent Diş Kliniği", sector: "Resmi wa.me Doğrulandı • Diş Kliniği", phone: "905337414411", domain: "esdent.com.tr" },
-      { name: "Antalya Dent Smile", sector: "Resmi wa.me Doğrulandı • Diş Kliniği", phone: "905308500215", domain: "antalyadentsmile.com" },
-      { name: "VetArt Veteriner", sector: "Resmi wa.me Doğrulandı • Veteriner", phone: "905064782320", domain: "vetart.com.tr" },
-      { name: "Essi Güzellik", sector: "Resmi tel: Doğrulandı • Güzellik Merkezi", phone: "905321524633", domain: "essiguzellik.com" },
-      { name: "Hermes Clinics", sector: "Resmi wa.me Doğrulandı • Diş & Estetik", phone: "905421208535", domain: "hermesclinics.com" },
-      { name: "Attelia Diş Kliniği", sector: "Resmi wa.me Doğrulandı • Diş Kliniği", phone: "905413125024", domain: "atteliadental.com" },
-      { name: "Clinic Expert", sector: "Resmi wa.me Doğrulandı • Estetik & Diş", phone: "905373766919", domain: "clinicexpert.com" },
-      { name: "Estethica Klinik", sector: "Resmi wa.me Doğrulandı • Estetik", phone: "905497919903", domain: "estethica.com.tr" },
-      { name: "Dentakay Diş Kliniği", sector: "Resmi wa.me Doğrulandı • Diş Kliniği", phone: "905415008008", domain: "dentakay.com" },
-      { name: "Smile Hair Clinic", sector: "Resmi wa.me Doğrulandı • Saç & Estetik", phone: "905491492400", domain: "smilehairclinic.com" },
-      { name: "Cosmedica Clinic", sector: "Resmi wa.me Doğrulandı • Saç & Estetik", phone: "905445560280", domain: "cosmedica.com" },
-      { name: "Dr. Cinik Clinic", sector: "Resmi wa.me Doğrulandı • Estetik Kliniği", phone: "905496413701", domain: "drcinik.com" },
-      { name: "Now Hair Time", sector: "Resmi tel: Doğrulandı • Saç Kliniği", phone: "905398417553", domain: "nowhairtime.com" }
+      { name: "PodoLife Ayak Sağlığı", sector: "🟢 DOĞRUDAN UZMAN HATTI • Podoloji", phone: "905079966262", domain: "podolife.com.tr", direct: true },
+      { name: "Beşiktaş Veteriner Kliniği", sector: "🟢 DOĞRUDAN HEKİM HATTI • Veteriner", phone: "905321662242", domain: "besiktasveteriner.com", direct: true },
+      { name: "Kadıköy Diş Kliniği", sector: "🟢 DOĞRUDAN KLİNİK HATTI • Butik Diş", phone: "905546258080", domain: "kadikoydis.com", direct: true },
+      { name: "VetArt Veteriner", sector: "🟢 DOĞRUDAN HEKİM HATTI • Veteriner", phone: "905064782320", domain: "vetart.com.tr", direct: true },
+      { name: "Esdent Diş Kliniği", sector: "🟢 DOĞRUDAN KLİNİK HATTI • Butik Diş", phone: "905337414411", domain: "esdent.com.tr", direct: true },
+      { name: "Antalya Dent Smile", sector: "🟢 DOĞRUDAN KLİNİK HATTI • Butik Diş", phone: "905308500215", domain: "antalyadentsmile.com", direct: true },
+      { name: "Essi Güzellik", sector: "🟢 DOĞRUDAN ŞUBE HATTI • Güzellik Merkezi", phone: "905321524633", domain: "essiguzellik.com", direct: true },
+      { name: "Attelia Diş Kliniği", sector: "🤖 ÇAĞRI MERKEZİ / BOT • Diş Kliniği", phone: "905413125024", domain: "atteliadental.com", direct: false },
+      { name: "Hermes Clinics", sector: "🤖 ÇAĞRI MERKEZİ / BOT • Diş & Estetik", phone: "905421208535", domain: "hermesclinics.com", direct: false },
+      { name: "Estethica Klinik", sector: "🤖 META BOT HATTI • Estetik Hastanesi", phone: "905497919903", domain: "estethica.com.tr", direct: false },
+      { name: "Clinic Expert", sector: "🤖 ÇAĞRI MERKEZİ / BOT • Estetik & Diş", phone: "905373766919", domain: "clinicexpert.com", direct: false },
+      { name: "Dentakay Diş Kliniği", sector: "🤖 ÇAĞRI MERKEZİ / BOT • Diş Kliniği", phone: "905415008008", domain: "dentakay.com", direct: false },
+      { name: "Smile Hair Clinic", sector: "🤖 ÇAĞRI MERKEZİ / BOT • Saç & Estetik", phone: "905491492400", domain: "smilehairclinic.com", direct: false },
+      { name: "Cosmedica Clinic", sector: "🤖 ÇAĞRI MERKEZİ / BOT • Saç & Estetik", phone: "905445560280", domain: "cosmedica.com", direct: false },
+      { name: "Dr. Cinik Clinic", sector: "🤖 ÇAĞRI MERKEZİ / BOT • Estetik Kliniği", phone: "905496413701", domain: "drcinik.com", direct: false },
+      { name: "Now Hair Time", sector: "🤖 ÇAĞRI MERKEZİ / BOT • Saç Kliniği", phone: "905398417553", domain: "nowhairtime.com", direct: false }
     ];
+
     function renderLeads() {
-      const grid = document.getElementById("leadsGrid"); grid.innerHTML = "";
+      const grid = document.getElementById("leadsGrid");
+      grid.innerHTML = "";
       INITIAL_LEADS.forEach((item, idx) => {
         const demoUrl = BASE_URL + "/esnaf.html?biz=" + encodeURIComponent(item.name) + "&tel=" + item.phone;
-        const msg = "Merhaba " + item.name + " yetkilisi, Instagram ve Google'dan gelen müşterilerinizin 30 saniyede paket seçip doğrudan bu WhatsApp hattınıza hazır randevu düşürmesi için işletmenize özel canlı bir kampanya sayfası hazırladım:\n\nCanlı Demo: " + demoUrl + "\n\nSayfadaki yeşil WhatsApp butonuna basarak kendi numaranızla canlı test edebilirsiniz. Beğenirseniz tüm sistemi tek seferlik 350 TL'ye hemen teslim edebilirim.";
+        const msg = "Merhaba " + item.name + " yetkilisi, Instagram ve Google'dan gelen müşterilerinizin 30 saniyede paket seçip doğrudan bu WhatsApp hattınıza hazır randevu düşürmesi için işletmenize özel canlı bir kampanya sayfası hazırladım:\n\nCanlı Demo: " + demoUrl + "\n\nSayfadaki yeşil WhatsApp butonuna basarak kendi numaranızla canlı test edebilirsiniz. Beğenirseniz tüm sistemi tek seferlik 350 TL'ye (aylık ücret olmadan) hemen teslim edebilirim.";
         const waHref = "https://wa.me/" + item.phone + "?text=" + encodeURIComponent(msg);
-        const card = document.createElement("div"); card.className = "lead-card"; card.id = "lead-" + idx;
-        card.innerHTML = '<div><span class="sector-tag">' + item.sector + '</span><div class="biz-title">' + item.name + '</div><div class="phone-line">+' + item.phone + ' • ' + item.domain + '</div></div><div class="btn-row"><a class="wa-send" href="' + waHref + '" target="_blank" onclick="document.getElementById(\'lead-' + idx + '\').classList.add(\'sent\')">WhatsApp\'tan Gönder (350 TL) →</a><a class="demo-view" href="' + demoUrl + '" target="_blank">İşletmeye Özel Canlı Siteyi Gör</a></div>';
+
+        const card = document.createElement("div");
+        card.className = "lead-card";
+        card.id = "lead-" + idx;
+        card.innerHTML = `
+          <div>
+            <span class="sector-tag ${item.direct ? '' : 'corp'}">${item.sector}</span>
+            <div class="biz-title">${item.name}</div>
+            <div class="phone-line">+${item.phone} • ${item.domain || "Yerel İşletme"}</div>
+          </div>
+          <div class="btn-row">
+            <a class="wa-send" href="${waHref}" target="_blank" onclick="document.getElementById('lead-${idx}').classList.add('sent')">WhatsApp'tan Gönder (350 TL Teklif) →</a>
+            <a class="demo-view" href="${demoUrl}" target="_blank">İşletmeye Özel Canlı Siteyi Gör</a>
+          </div>
+        `;
         grid.appendChild(card);
       });
     }
+
     function addCustomLead() {
       const name = document.getElementById("newBiz").value.trim();
       let tel = document.getElementById("newTel").value.replace(/\D/g, "");
       if (!name || !tel) return alert("Lütfen işletme adı ve 05xx telefon girin.");
-      if (tel.startsWith("05")) tel = "9" + tel; else if (tel.startsWith("5")) tel = "90" + tel;
-      INITIAL_LEADS.unshift({ name: name, sector: "Özel Eklenen İşletme", phone: tel, domain: "Google Haritalar" });
+      if (tel.startsWith("05")) tel = "9" + tel;
+      else if (tel.startsWith("5")) tel = "90" + tel;
+      INITIAL_LEADS.unshift({ name: name, sector: "🟢 ÖZEL EKLENEN İŞLETME", phone: tel, domain: "Google Haritalar", direct: true });
       renderLeads();
+      document.getElementById("newBiz").value = "";
+      document.getElementById("newTel").value = "";
     }
+
     renderLeads();
   </script>
 </body>
