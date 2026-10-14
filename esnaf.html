@@ -59,7 +59,7 @@
     const tel = params.get("tel") || "";
     document.querySelectorAll(".biz-name").forEach(el => el.textContent = biz);
     document.title = biz + " — Özel Kampanya & Hızlı WhatsApp Randevu";
-    document.getElementById("claimTopBtn").href = "mailto:berkeakdemir5855@gmail.com?subject=" + encodeURIComponent("ALMAK İSTİYORUM - " + biz + " Hazır Kampanya Sitesi") + "&body=" + encodeURIComponent("Merhaba Berke,\n\n" + biz + " için hazırladığın canlı kampanya ve WhatsApp randevu sayfasını satın almak istiyoruz. Havale/FAST için IBAN bilgini paylaşabilir misin?");
+    document.getElementById("claimTopBtn").href = "./odeme.html?marka=" + encodeURIComponent(biz) + "&fiyat=350%20TL";
     function testWhatsApp() {
       const name = document.getElementById("custName").value || "Müşteri";
       const time = document.getElementById("custTime").value;

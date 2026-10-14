@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Güvenli Ödeme &amp; Anında Teslimat — Hızlı FAST / Wise Transfer</title>
+  <style>
+    :root { --bg: #090d16; --card: #111827; --accent: #22c55e; --gold: #f59e0b; --blue: #38bdf8; --text: #f8fafc; --muted: #94a3b8; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); padding: 28px 16px 60px; line-height: 1.5; }
+    .wrap { max-width: 640px; margin: 0 auto; }
+    .badge { display: inline-block; background: rgba(34, 197, 94, 0.15); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.4); font-size: 12px; font-weight: 800; padding: 5px 12px; border-radius: 999px; margin-bottom: 12px; }
+    h1 { font-size: 25px; font-weight: 900; margin-bottom: 8px; }
+    .sub { color: var(--muted); font-size: 14px; margin-bottom: 20px; }
+    .box { background: var(--card); border: 2px solid rgba(34, 197, 94, 0.45); border-radius: 16px; padding: 22px; margin-bottom: 18px; box-shadow: 0 12px 32px rgba(0,0,0,0.4); }
+    .row { background: #090d16; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 14px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+    .lbl { font-size: 12px; color: var(--muted); text-transform: uppercase; font-weight: 700; }
+    .val { font-size: 16px; font-weight: 900; color: #fff; font-family: monospace; margin-top: 3px; word-break: break-all; }
+    .copy-btn { background: var(--gold); color: #000; border: none; font-weight: 800; font-size: 12px; padding: 9px 14px; border-radius: 8px; cursor: pointer; white-space: nowrap; }
+    .intl-box { background: var(--card); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 16px; padding: 20px; margin-bottom: 18px; }
+    .intl-box h2 { font-size: 17px; color: var(--blue); margin-bottom: 8px; }
+    .intl-box p, .intl-box li { font-size: 13px; color: #cbd5e1; margin-bottom: 6px; }
+    .confirm-btn { display: block; width: 100%; background: var(--accent); color: #052e16; font-weight: 900; font-size: 16px; text-align: center; padding: 16px; border-radius: 12px; text-decoration: none; margin-top: 16px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <span class="badge">🔒 7/24 Otomatik FAST &amp; Wise Teslimat Sistemi</span>
+    <h1>⚡ <span id="pkgTitle">Hazır Satış &amp; Randevu Sistemi</span> — Ödeme &amp; Anında Teslimat</h1>
+    <p class="sub">Ödemenizi aşağıdaki <strong>VakıfBank</strong> hesabına 7/24 FAST/Havale (veya yurtdışından Wise/Paysend) ile gönderdikten sonra en alttaki yeşil butona basın; kaynak kod paketiniz (ZIP) anında e-postanıza iletilir.</p>
+
+    <div class="box">
+      <div style="font-size:14px; font-weight:800; color:#4ade80; margin-bottom:12px;">🇹🇷 Türkiye İçi 7/24 FAST / Havale Bilgileri (International IBAN)</div>
+      <div class="row"><div><div class="lbl">Banka / Bank Name</div><div class="val" style="font-family:sans-serif;">VakıfBank (SWIFT/BIC: TVBATR2A)</div></div></div>
+      <div class="row">
+        <div><div class="lbl">Alıcı Adı Soyadı / Recipient Full Name</div><div class="val" id="accName">Yusuf Akdemir</div></div>
+        <button class="copy-btn" onclick="copyText('Yusuf Akdemir', this)">📋 İsim Kopyala</button>
+      </div>
+      <div class="row">
+        <div><div class="lbl">IBAN Numarası (TRY / TL)</div><div class="val" id="ibanVal">TR06 0001 5001 5800 7313 5676 16</div></div>
+        <button class="copy-btn" onclick="copyText('TR060001500158007313567616', this)">📋 IBAN Kopyala</button>
+      </div>
+      <div class="row"><div><div class="lbl">Açıklama / Reference Note</div><div class="val" id="refVal" style="color:#fbbf24;">Dijital Şablon Paketi</div></div></div>
+      <a id="paidBtn" class="confirm-btn" href="mailto:berkeakdemir5855@gmail.com?subject=ODEME%20YAPILDI">✅ Ödemeyi Yaptım — Kaynak Kod Paketimi Gönder →</a>
+    </div>
+
+    <div class="intl-box">
+      <h2>🌍 For International Buyers (Pay via Wise.com / Paysend / Remitly in 60s)</h2>
+      <p>You can pay securely with your credit/debit card using <strong>Wise.com</strong>, <strong>Paysend.com</strong>, or <strong>Remitly</strong> directly to our IBAN above:</p>
+      <ul style="padding-left:18px; margin-top:8px;">
+        <li><strong>Recipient Currency:</strong> TRY (Turkish Lira — Wise/Paysend automatically converts your USD/EUR)</li>
+        <li><strong>Recipient Full Name:</strong> <code>Yusuf Akdemir</code></li>
+        <li><strong>IBAN:</strong> <code>TR060001500158007313567616</code> (Bank: VakıfBank, SWIFT: TVBATR2A)</li>
+      </ul>
+      <p style="margin-top:8px;">Once sent, click the green button above to notify our automated delivery inbox and receive your full deployable <code>.zip</code> bundle immediately.</p>
+    </div>
+  </div>
+  <script>
+    function copyText(txt, btn) {
+      navigator.clipboard.writeText(txt);
+      const old = btn.textContent;
+      btn.textContent = "✅ Kopyalandı!";
+      setTimeout(() => btn.textContent = old, 2000);
+    }
+    const params = new URLSearchParams(window.location.search);
+    const marka = params.get("marka") || params.get("brand") || params.get("biz") || "";
+    const fiyat = params.get("fiyat") || "350 TL";
+    if (marka) {
+      document.getElementById("pkgTitle").textContent = marka + " Hazır Sistem Paketi (" + fiyat + ")";
+      document.getElementById("refVal").textContent = marka + " - " + fiyat;
+    }
+    document.getElementById("paidBtn").href = "mailto:berkeakdemir5855@gmail.com?subject=" + encodeURIComponent("ODEME YAPILDI (" + fiyat + ") - " + (marka || "Hazir Paket")) + "&body=" + encodeURIComponent("Merhaba Berke,\n\nYusuf Akdemir (VakıfBank TR06 0001 5001 5800 7313 5676 16) hesabına " + (marka || "paket") + " ödemesini gönderdim. Hazır ZIP paketini bu adrese iletebilir misin?");
+  </script>
+</body>
+</html>
