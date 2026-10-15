@@ -1,7 +1,7 @@
 # 🚀 OTONOM PARA KAZANMA MOTORU — BULUT & ÇOKLU BİLGİSAYAR RAPORU (`RAPOR.md`)
 
-**Son Güncelleme:** 15 Ekim 2026 (Saat 20:55 Otonom Turu & Sıcak Müşteri Yanıtı Tamamlandı)
-**Durum:** `🟢 68 DOĞRULANMIŞ MAĞAZA & KLİNİĞE TESLİM EDİLDİ + 1 SICAK TEKLİF İLETİLDİ (Badecanlar)`
+**Son Güncelleme:** 15 Ekim 2026 (Saat 22:02 Otonom Turu Tamamlandı)
+**Durum:** `🟢 72 DOĞRULANMIŞ MAĞAZA & KLİNİĞE TESLİM EDİLDİ (0 Bounce) + 1 SICAK TEKLİF İLETİLDİ (Badecanlar)`
 **Tanımlı Banka & Alıcı:** `VakıfBank (SWIFT: TVBATR2A) | Alıcı: Yusuf Akdemir | IBAN: TR06 0001 5001 5800 7313 5676 16`
 
 ---
@@ -13,10 +13,14 @@
 
 ---
 
-## 🔥 15 EKİM SAAT 20:55 OTONOM TURU — YENİ D2C KOZMETİK MAĞAZALARI (0 BOUNCE)
-1. **Naturalive Beauty** (`info@naturalive.com.tr`) -> 🟢 TESLİM EDİLDİ (`1a140b408ecbc58f`, 0 bounce)
-2. **New Well Kozmetik** (`destek@newwell.com.tr`) -> 🟢 TESLİM EDİLDİ (`1a140b409a640105`, 0 bounce)
-3. **sheVec Kozmetik** (`destek@shevec.com`) -> 🟢 TESLİM EDİLDİ (`1a140b4091579403`, 0 bounce)
+## 🔥 15 EKİM SAAT 22:00 & 20:55 OTONOM TURLARI — YENİ MAĞAZA & KLİNİKLER (0 BOUNCE)
+1. **Dermabien Dermokozmetik** (`info@dermabien.com`) -> 🟢 TESLİM EDİLDİ (`1a140f1c0f1fedea`, 0 bounce)
+2. **Best Dental Istanbul** (`info@bestdentalistanbul.com`) -> 🟢 TESLİM EDİLDİ (`1a140f1c1fe397d7`, 0 bounce)
+3. **Turk Hair Institute** (`info@turkhairinstitute.com`) -> 🟢 TESLİM EDİLDİ (`1a140f1c026ca887`, 0 bounce)
+4. **Istanbul Hair Clinic** (`en@istanbulhairclinic.com`) -> 🟢 TESLİM EDİLDİ (`1a140f1c15a17f95`, 0 bounce)
+5. **Naturalive Beauty** (`info@naturalive.com.tr`) -> 🟢 TESLİM EDİLDİ (`1a140b408ecbc58f`, 0 bounce)
+6. **New Well Kozmetik** (`destek@newwell.com.tr`) -> 🟢 TESLİM EDİLDİ (`1a140b409a640105`, 0 bounce)
+7. **sheVec Kozmetik** (`destek@shevec.com`) -> 🟢 TESLİM EDİLDİ (`1a140b4091579403`, 0 bounce)
 
 ---
 
