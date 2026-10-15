@@ -1,7 +1,7 @@
 # 🚀 OTONOM PARA KAZANMA MOTORU — BULUT & ÇOKLU BİLGİSAYAR RAPORU (`RAPOR.md`)
 
-**Son Güncelleme:** 15 Ekim 2026 (Saat 22:02 Otonom Turu Tamamlandı)
-**Durum:** `🟢 72 DOĞRULANMIŞ MAĞAZA & KLİNİĞE TESLİM EDİLDİ (0 Bounce) + 1 SICAK TEKLİF İLETİLDİ (Badecanlar)`
+**Son Güncelleme:** 16 Ekim 2026 (Saat 00:02 Otonom Turu Tamamlandı)
+**Durum:** `🟢 79 DOĞRULANMIŞ MAĞAZA & KLİNİĞE TESLİM EDİLDİ (0 Bounce) + 1 SICAK TEKLİF İLETİLDİ (Badecanlar)`
 **Tanımlı Banka & Alıcı:** `VakıfBank (SWIFT: TVBATR2A) | Alıcı: Yusuf Akdemir | IBAN: TR06 0001 5001 5800 7313 5676 16`
 
 ---
@@ -10,6 +10,17 @@
 - **Badecanlar Şefkatli Kozmetik — Oya Yıldırım** (`info@badecanlar.com`):
   - **Gelen Yanıt:** *"Berke bey merhaba, Tabi ki iletebilirsiniz🌸 Bende pazarlama ekibimize aktarıyor olacağım gönderdiğiniz çalışma özetini.."*
   - **Otomatik İletilen Canlı Paket & Ödeme (`1a140b1a673f272d`):** Canlı vitrin demosu (`esnaf.html`), 3D AI Reklam portföyü (`ai-reklam-portfoy.html`) ve VakıfBank (`Yusuf Akdemir`) ödeme sayfası (`odeme.html`) iletildi.
+
+---
+
+## 🔥 16 EKİM SAAT 00:00 OTONOM TURU — 7 YENİ MAĞAZA & KLİNİK (0 BOUNCE)
+1. **Orzax Day2Day** (`info@orzax.com.tr`) -> 🟢 TESLİM EDİLDİ (`1a1415f93cdd28d7`, 0 bounce)
+2. **DCT Klinik Antalya** (`info@dctklinik.com`) -> 🟢 TESLİM EDİLDİ (`1a1415f924b83343`, 0 bounce)
+3. **ProDentalia Antalya** (`info@prodentalya.com`) -> 🟢 TESLİM EDİLDİ (`1a1415f936f1f5ea`, 0 bounce)
+4. **Smile İzmir Diş Kliniği** (`info@smileizmir.com`) -> 🟢 TESLİM EDİLDİ (`1a1415f92a814a9f`, 0 bounce)
+5. **Dentorion Diş Polikliniği** (`bilgi@dentorion.com`) -> 🟢 TESLİM EDİLDİ (`1a1415f9798b6d13`, 0 bounce)
+6. **Dent Leon Diş Polikliniği** (`info@dentleon.com`) -> 🟢 TESLİM EDİLDİ (`1a1415f99c49147d`, 0 bounce)
+7. **Yalı Diş Polikliniği** (`info@yalidis.com`) -> 🟢 TESLİM EDİLDİ (`1a1415f984a068ab`, 0 bounce)
 
 ---
 
