@@ -1,0 +1,33 @@
+name: 24/7 Otonom Satis Motoru (Bilgisayar Kapaliyken Calisir)
+
+on:
+  schedule:
+    - cron: '0 */2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  autonomous-sales:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run 24/7 Cloud Sales Worker (Gmail Reply + Verified Mailto Outreach)
+        env:
+          COMPOSIO_MCP_CONFIG: ${{ secrets.COMPOSIO_MCP_CONFIG }}
+        run: node cloud_sales_worker.mjs
+
+      - name: Save Cloud State
+        run: |
+          git config user.name "Hanubaki Cloud Engine"
+          git config user.email "berkeakdemir5855@gmail.com"
+          git add cloud_state.json || true
+          git diff --staged --quiet || (git commit -m "chore(cloud): update 24/7 outreach state [skip ci]" && git push)
