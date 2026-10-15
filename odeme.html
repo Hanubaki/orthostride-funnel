@@ -10,7 +10,7 @@
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); padding: 28px 16px 60px; line-height: 1.5; }
     .wrap { max-width: 640px; margin: 0 auto; }
     .badge { display: inline-block; background: rgba(34, 197, 94, 0.15); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.4); font-size: 12px; font-weight: 800; padding: 5px 12px; border-radius: 999px; margin-bottom: 12px; }
-    h1 { font-size: 25px; font-weight: 900; margin-bottom: 8px; }
+    h1 { font-size: 26px; font-weight: 900; margin-bottom: 8px; }
     .sub { color: var(--muted); font-size: 14px; margin-bottom: 20px; }
     .box { background: var(--card); border: 2px solid rgba(34, 197, 94, 0.45); border-radius: 16px; padding: 22px; margin-bottom: 18px; box-shadow: 0 12px 32px rgba(0,0,0,0.4); }
     .row { background: #090d16; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 14px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
@@ -20,7 +20,7 @@
     .intl-box { background: var(--card); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 16px; padding: 20px; margin-bottom: 18px; }
     .intl-box h2 { font-size: 17px; color: var(--blue); margin-bottom: 8px; }
     .intl-box p, .intl-box li { font-size: 13px; color: #cbd5e1; margin-bottom: 6px; }
-    .confirm-btn { display: block; width: 100%; background: var(--accent); color: #052e16; font-weight: 900; font-size: 16px; text-align: center; padding: 16px; border-radius: 12px; text-decoration: none; margin-top: 16px; }
+    .confirm-btn { display: block; width: 100%; background: var(--accent); color: #052e16; font-weight: 900; font-size: 16px; text-align: center; padding: 16px; border-radius: 12px; text-decoration: none; margin-top: 16px; box-shadow: 0 6px 20px rgba(34, 197, 94, 0.3); }
   </style>
 </head>
 <body>
@@ -31,30 +31,52 @@
 
     <div class="box">
       <div style="font-size:14px; font-weight:800; color:#4ade80; margin-bottom:12px;">🇹🇷 Türkiye İçi 7/24 FAST / Havale Bilgileri (International IBAN)</div>
-      <div class="row"><div><div class="lbl">Banka / Bank Name</div><div class="val" style="font-family:sans-serif;">VakıfBank (SWIFT/BIC: TVBATR2A)</div></div></div>
+
       <div class="row">
-        <div><div class="lbl">Alıcı Adı Soyadı / Recipient Full Name</div><div class="val" id="accName">Yusuf Akdemir</div></div>
+        <div>
+          <div class="lbl">Banka / Bank Name</div>
+          <div class="val" style="font-family:sans-serif;">VakıfBank (SWIFT/BIC: TVBATR2A)</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <div class="lbl">Alıcı Adı Soyadı / Recipient Full Name</div>
+          <div class="val" id="accName">Yusuf Akdemir</div>
+        </div>
         <button class="copy-btn" onclick="copyText('Yusuf Akdemir', this)">📋 İsim Kopyala</button>
       </div>
+
       <div class="row">
-        <div><div class="lbl">IBAN Numarası (TRY / TL)</div><div class="val" id="ibanVal">TR06 0001 5001 5800 7313 5676 16</div></div>
+        <div>
+          <div class="lbl">IBAN Numarası (TRY / TL)</div>
+          <div class="val" id="ibanVal">TR06 0001 5001 5800 7313 5676 16</div>
+        </div>
         <button class="copy-btn" onclick="copyText('TR060001500158007313567616', this)">📋 IBAN Kopyala</button>
       </div>
-      <div class="row"><div><div class="lbl">Açıklama / Reference Note</div><div class="val" id="refVal" style="color:#fbbf24;">Dijital Şablon Paketi</div></div></div>
-      <a id="paidBtn" class="confirm-btn" href="mailto:berkeakdemir5855@gmail.com?subject=ODEME%20YAPILDI">✅ Ödemeyi Yaptım — Kaynak Kod Paketimi Gönder →</a>
+
+      <div class="row">
+        <div>
+          <div class="lbl">Açıklama / Reference Note</div>
+          <div class="val" id="refVal" style="color:#fbbf24;">Dijital Şablon Paketi</div>
+        </div>
+      </div>
+
+      <a id="paidBtn" class="confirm-btn" href="mailto:berkeakdemir5855@gmail.com?subject=%C3%96DEME%20YAPILDI%20-%20Dosya%20Teslimat%C4%B1">✅ Ödemeyi Yaptım — Kaynak Kod Paketimi Gönder →</a>
     </div>
 
     <div class="intl-box">
-      <h2>🌍 For International Buyers (Pay via Wise.com / Paysend / Remitly in 60s)</h2>
-      <p>You can pay securely with your credit/debit card using <strong>Wise.com</strong>, <strong>Paysend.com</strong>, or <strong>Remitly</strong> directly to our IBAN above:</p>
+      <h2>🌍 For International Buyers (Lemon Squeezy Store: GraphFlow / Wise.com in 60s)</h2>
+      <p>Our official <strong>Lemon Squeezy Store (GraphFlow)</strong> &amp; direct international IBAN checkout are active 24/7! You can pay securely with your credit/debit card, Apple Pay, or via <strong>Wise.com / Paysend.com / Remitly</strong> directly to our IBAN above:</p>
       <ul style="padding-left:18px; margin-top:8px;">
         <li><strong>Recipient Currency:</strong> TRY (Turkish Lira — Wise/Paysend automatically converts your USD/EUR)</li>
         <li><strong>Recipient Full Name:</strong> <code>Yusuf Akdemir</code></li>
-        <li><strong>IBAN:</strong> <code>TR060001500158007313567616</code> (Bank: VakıfBank, SWIFT: TVBATR2A)</li>
+        <li><strong>IBAN:</strong> <code>TR060001500158007313567616</code> (Bank: VakıfBank — SWIFT: <code>TVBATR2A</code>)</li>
       </ul>
-      <p style="margin-top:8px;">Once sent, click the green button above to notify our automated delivery inbox and receive your full deployable <code>.zip</code> bundle immediately.</p>
+      <p style="margin-top:8px;">Once sent, click the green button above to notify our automated delivery inbox (<code>berkeakdemir5855@gmail.com</code>) and receive your full deployable <code>.zip</code> bundle immediately.</p>
     </div>
   </div>
+
   <script>
     function copyText(txt, btn) {
       navigator.clipboard.writeText(txt);

@@ -37,11 +37,11 @@
 <body>
   <div class="wrap">
     <div class="top-nav">
-      <a class="nav-pill active" href="./fabrika.html?v=100">🔥 Instagram DM &amp; QR Menü Fabrikası</a>
+      <a class="nav-pill active" href="./fabrika.html?v=102">🔥 Instagram DM &amp; QR Menü Fabrikası</a>
       <a class="nav-pill" href="./whatsapp-avci.html?v=3">1. WhatsApp Esnaf Avcısı</a>
       <a class="nav-pill" href="./seo-hub.html">2. SEO Şablon Mağazası</a>
       <a class="nav-pill" href="./ai-reklam-portfoy.html">3. AI Reklam Mağazası</a>
-      <a class="nav-pill" href="./odeme.html">Ödeme Sayfası (VakıfBank IBAN)</a>
+      <a class="nav-pill" href="./odeme.html?v=3">Ödeme Sayfası (VakıfBank IBAN)</a>
     </div>
 
     <h1>🛡️ Küçük İşletme Instagram DM Avcısı (13 Doğrudan Instagram'dan Kazınmış Aktif Profil)</h1>
@@ -83,6 +83,18 @@
         <button class="btn-act btn-copy" style="background:#ea580c;color:#fff;" onclick="copyQuickReply(this, 'wa_followup')">🔥 WhatsApp 11 Kliniğe &quot;Bot Değilim&quot; Takip Mesajı</button>
         <button class="btn-act btn-copy" style="background:#db2777;color:#fff;" onclick="copyQuickReply(this, 'ig_comment')">🔔 Instagram Son Gönderiye &quot;DM'e Bakın&quot; Yorumu</button>
         <button class="btn-act btn-copy" style="background:#10b981;color:#052e16;" onclick="copyQuickReply(this, 'ig_nolink')">💌 Instagram Yeni Yerlere Linksiz 1. Mesaj (Spam'a Düşmez)</button>
+      </div>
+    </div>
+
+    <div class="gen-box" style="border-color:rgba(34,197,94,.7);background:linear-gradient(135deg,#052e16,#0f172a);margin-bottom:18px;">
+      <h2 style="font-size:18px;font-weight:900;margin-bottom:6px;color:#4ade80;">🟢 YENİ CANLI İNSAN YANITI (@badecanlar — Nihal Hanım) &amp; Lemon Squeezy (GraphFlow) Onayı!</h2>
+      <p style="font-size:12.5px;color:#d1fae5;margin-bottom:10px;line-height:1.5;">
+        <strong>1) @badecanlar (Nihal Hanım — Müşteri Temsilcisi):</strong> <em>&quot;Merhabalar ben Nihal🤗 Badecanlar'ın ürüncük uzmanı, müşteri temsilcisiyim. Öncelikle teklifiniz için çok teşekkür ederiz, ekip arkadaşlarımıza sayfanızı ve tüm bilgilerinizi aktarıyoruz. 🙏 İleride oluşabilecek iş birlikleri için sizlere dönüş sağlasınlar🌸.&quot;</em> (Kurumsal <code>info@badecanlar.com</code> adresine Nihal Hanım referanslı takip maili otomatik gönderildi + aşağıdaki butonla DM'den de tek tıkla yanıtlayabilirsin!)<br>
+        <strong>2) 🌍 Lemon Squeezy Mağazan (<code>GraphFlow</code>) Onaylandı (Bu Sabah 06:09):</strong> Global kredi kartı / Apple Pay mağazan <strong>GraphFlow</strong> resmen onaylandı ve canlı satışa açıldı!
+      </p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;">
+        <button class="btn-act btn-copy" style="background:#22c55e;color:#052e16;" onclick="copyQuickReply(this, 'badecanlar_nihal')">🌸 @badecanlar (Nihal Hanım) İçin Kapanış Cevabını Kopyala &amp; DM Aç</button>
+        <a class="btn-act" style="background:#38bdf8;color:#082f49;text-align:center;" href="./esnaf.html?biz=Badecanlar%20Dogal%20Kozmetik" target="_blank">👀 Badecanlar Canlı Vitrini Gör</a>
       </div>
     </div>
 
@@ -165,7 +177,15 @@
 
     function copyQuickReply(btn, kind) {
       let msg = "";
-      if (kind === "wa_followup") {
+      if (kind === "badecanlar_nihal") {
+        msg = "Çok teşekkürler Nihal Hanım 🌸 Pazarlama ekibiniz incelerken Badecanlar'a özel hazırladığımız canlı kampanya ve hızlı WhatsApp sipariş vitrinini doğrudan şu linkten test edebilirler:\n👉 https://hanubaki.github.io/orthostride-funnel/esnaf.html?biz=Badecanlar%20Dogal%20Kozmetik\n\nAyrıca info@badecanlar.com adresinize de detaylı bilgi notumuzu ilettik. Çok sevgiler, iyi çalışmalar! 🌿";
+        navigator.clipboard.writeText(msg);
+        window.open("https://www.instagram.com/badecanlar/", "_blank");
+        const old = btn.textContent;
+        btn.textContent = "✅ Kopyalandı & @badecanlar Açıldı!";
+        setTimeout(() => btn.textContent = old, 2500);
+        return;
+      } else if (kind === "wa_followup") {
         msg = "Hocam selamlar tekrardan, üstteki mesajım hazır reklam botu gibi görünmüş olabilir kusura bakmayın :) Bizzat kliniğiniz için hazırlamıştım, bakma şansınız oldu mu?";
       } else if (kind === "ig_comment") {
         msg = "Merhaba, işletmeniz için hazırladığım özel çalışmayı DM istek kutunuza bıraktım bakar mısınız 🌸";
