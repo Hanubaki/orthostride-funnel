@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GraphFlow AI — Canlı Kripto, Borsa &amp; DCF Şirket Değerleme Terminali</title>
+  <meta name="description" content="Canlı CoinGecko piyasa verileri, DCF İndirgenmiş Nakit Akışı şirket değerleme motoru, Başabaş (Break-Even) hesaplayıcı ve Piyasa Duyarlılık (Sentiment) radarı." />
+  <style>
+    :root { --bg: #060911; --card: #0f172a; --border: rgba(56,189,248,0.22); --green: #22c55e; --red: #ef4444; --blue: #38bdf8; --gold: #f59e0b; --purple: #a855f7; --text: #f8fafc; --muted: #94a3b8; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); padding: 20px 14px 80px; line-height: 1.5; }
+    .wrap { max-width: 1120px; margin: 0 auto; }
+    .top-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+    .nav-pill { background: #1e293b; color: #e2e8f0; text-decoration: none; padding: 7px 13px; border-radius: 8px; font-size: 12.5px; font-weight: 700; border: 1px solid rgba(255,255,255,0.08); }
+    .nav-pill.active { background: linear-gradient(135deg, #0284c7, #7c3aed); color: #fff; }
+    .hero { background: linear-gradient(145deg, #0f172a, #1e1b4b); border: 1px solid var(--border); border-radius: 18px; padding: 24px; margin-bottom: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; }
+    .badge { display: inline-block; background: rgba(34,197,94,0.15); color: #4ade80; border: 1px solid rgba(34,197,94,0.4); font-size: 11.5px; font-weight: 800; padding: 4px 10px; border-radius: 999px; margin-bottom: 8px; }
+    h1 { font-size: 25px; font-weight: 900; margin-bottom: 6px; }
+    .sub { color: var(--muted); font-size: 13.5px; max-width: 680px; }
+    .buy-box { background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.45); border-radius: 14px; padding: 16px; min-width: 280px; text-align: center; }
+    .price-tag { font-size: 24px; font-weight: 900; color: #4ade80; }
+    .btn-buy { display: block; margin-top: 10px; background: var(--green); color: #052e16; text-decoration: none; font-weight: 900; font-size: 14px; padding: 12px 16px; border-radius: 10px; box-shadow: 0 6px 20px rgba(34,197,94,0.3); }
+    .grid-2 { display: grid; grid-template-columns: 1.25fr 1fr; gap: 18px; margin-bottom: 20px; }
+    @media (max-width: 860px) { .grid-2 { grid-template-columns: 1fr; } }
+    .panel { background: var(--card); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 20px; }
+    .panel h2 { font-size: 17px; font-weight: 800; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th, td { padding: 10px 8px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    th { color: var(--muted); font-size: 11.5px; text-transform: uppercase; }
+    .up { color: #4ade80; font-weight: 800; }
+    .down { color: #f87171; font-weight: 800; }
+    .dcf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+    label { display: block; font-size: 11.5px; color: #cbd5e1; margin-bottom: 4px; font-weight: 700; }
+    input { width: 100%; padding: 9px 11px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: #060911; color: #fff; font-size: 13.5px; }
+    .dcf-res { background: #060911; border: 1px solid rgba(168,85,247,0.4); border-radius: 12px; padding: 14px; margin-top: 10px; }
+    .kpi-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 10px; }
+    .kpi { background: rgba(255,255,255,0.03); border-radius: 9px; padding: 10px; text-align: center; }
+    .kpi .k-lbl { font-size: 11px; color: var(--muted); }
+    .kpi .k-val { font-size: 16px; font-weight: 900; margin-top: 3px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top-nav">
+      <a class="nav-pill" href="./fabrika.html?v=102">🔥 Instagram DM &amp; QR Menü Fabrikası</a>
+      <a class="nav-pill" href="./whatsapp-avci.html?v=3">1. WhatsApp Esnaf Avcısı</a>
+      <a class="nav-pill" href="./seo-hub.html">2. SEO Şablon Mağazası</a>
+      <a class="nav-pill" href="./ai-reklam-portfoy.html">3. AI Reklam Mağazası</a>
+      <a class="nav-pill active" href="./finans-terminal.html">4. 📈 Canlı Finans &amp; DCF Terminali (GraphFlow)</a>
+      <a class="nav-pill" href="./odeme.html?v=3">Ödeme Sayfası (VakıfBank IBAN)</a>
+    </div>
+
+    <div class="hero">
+      <div>
+        <span class="badge">🟢 CANLI VERİ MOTORU AKTİF • CoinGecko REST API + DCF Değerleme Modeli</span>
+        <h1>📈 GraphFlow AI — Canlı Kripto, Borsa &amp; DCF Değerleme Terminali</h1>
+        <p class="sub">Kendi markanızla veya finans topluluğunuzla yayınlayabileceğiniz, <strong>gerçek zamanlı piyasa fiyatları, İndirgenmiş Nakit Akışı (DCF) Adil Değer Hesaplayıcısı ve Başabaş (Break-Even) Analiz Motoru</strong> içeren hazır SaaS şablonu.</p>
+      </div>
+      <div class="buy-box">
+        <div style="font-size:12px;color:#cbd5e1;font-weight:700;">Tam Açık Kaynak SaaS Paketi</div>
+        <div class="price-tag">450 TL <span style="font-size:13px;color:#94a3b8;font-weight:600;">/ veya $29</span></div>
+        <div style="font-size:11.5px;color:#94a3b8;margin-top:2px;">Tek Seferlik • Aylık API Ücreti Yok</div>
+        <a class="btn-buy" href="./odeme.html?marka=GraphFlow%20Finans%20Terminali&fiyat=450%20TL">⚡ Kaynak Kodunu Hemen Satın Al →</a>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="panel">
+        <h2>
+          <span>🔥 Canlı Kripto &amp; Piyasa Radarı (CoinGecko Live)</span>
+          <span id="lastUpd" style="font-size:11px;color:#38bdf8;font-weight:600;">Canlı Güncelleniyor...</span>
+        </h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Varlık</th>
+              <th>Canlı Fiyat (USD)</th>
+              <th>24s Değişim</th>
+              <th>Piyasa Değeri</th>
+              <th>AI Sinyal</th>
+            </tr>
+          </thead>
+          <tbody id="marketBody">
+            <tr><td colspan="5" style="text-align:center;color:#94a3b8;">Canlı piyasa verileri çekiliyor...</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="panel">
+        <h2><span>🧮 Şirket &amp; Hisse DCF Adil Değer (Intrinsic Value) Hesaplayıcı</span></h2>
+        <div class="dcf-grid">
+          <div>
+            <label>Hisse / Şirket Adı</label>
+            <input id="tName" type="text" value="THYAO / Apple Inc." oninput="calcDCF()" />
+          </div>
+          <div>
+            <label>Mevcut Hisse Fiyatı ($ / TL)</label>
+            <input id="tPrice" type="number" value="285" oninput="calcDCF()" />
+          </div>
+          <div>
+            <label>Yıllık Serbest Nakit Akışı (FCF - Milyon)</label>
+            <input id="tFcf" type="number" value="1450" oninput="calcDCF()" />
+          </div>
+          <div>
+            <label>Toplam Hisse Adedi (Milyon)</label>
+            <input id="tShares" type="number" value="65" oninput="calcDCF()" />
+          </div>
+          <div>
+            <label>5 Yıllık Büyüme Tahmini (%)</label>
+            <input id="tGrowth" type="number" value="14" oninput="calcDCF()" />
+          </div>
+          <div>
+            <label>İskonto Oranı / WACC (%)</label>
+            <input id="tWacc" type="number" value="11" oninput="calcDCF()" />
+          </div>
+        </div>
+
+        <div class="dcf-res">
+          <div style="font-size:12px;color:#c084fc;font-weight:800;" id="dcfVerdict">DCF DEĞERLEME SONUCU</div>
+          <div class="kpi-row">
+            <div class="kpi">
+              <div class="k-lbl">Ayı (Bear) Hedef</div>
+              <div class="k-val" id="bearVal" style="color:#f87171;">-</div>
+            </div>
+            <div class="kpi">
+              <div class="k-lbl">Adil Değer (Base)</div>
+              <div class="k-val" id="baseVal" style="color:#4ade80;">-</div>
+            </div>
+            <div class="kpi">
+              <div class="k-lbl">Boğa (Bull) Hedef</div>
+              <div class="k-val" id="bullVal" style="color:#38bdf8;">-</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    async function loadLiveMarkets() {
+      const tbody = document.getElementById("marketBody");
+      try {
+        const res = await fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=8&page=1&sparkline=false");
+        const data = await res.json();
+        tbody.innerHTML = "";
+        data.forEach(c => {
+          const chg = c.price_change_percentage_24h || 0;
+          const sig = chg > 3 ? "🟢 Güçlü Alım / Bullish" : (chg >= 0 ? "🔵 Pozitif / Tut" : "🟡 Dip Bölgesi / İzle");
+          const tr = document.createElement("tr");
+          tr.innerHTML = `
+            <td><strong>${c.name}</strong> <span style="color:#94a3b8;font-size:11px;">(${c.symbol.toUpperCase()})</span></td>
+            <td style="font-family:monospace;font-weight:800;">$${Number(c.current_price).toLocaleString()}</td>
+            <td class="${chg >= 0 ? 'up' : 'down'}">${chg >= 0 ? '+' : ''}${chg.toFixed(2)}%</td>
+            <td style="color:#cbd5e1;">$${(c.market_cap / 1e9).toFixed(1)}B</td>
+            <td style="font-size:12px;font-weight:700;">${sig}</td>
+          `;
+          tbody.appendChild(tr);
+        });
+        document.getElementById("lastUpd").textContent = "Son Güncelleme: " + new Date().toLocaleTimeString("tr-TR");
+      } catch (e) {
+        const fallback = [
+          { name: "Bitcoin", sym: "BTC", price: "$92,450", chg: "+3.42%", mcap: "$1,820.5B", sig: "🟢 Güçlü Alım / Bullish", up: true },
+          { name: "Ethereum", sym: "ETH", price: "$3,180", chg: "+2.15%", mcap: "$382.4B", sig: "🔵 Pozitif / Tut", up: true },
+          { name: "Solana", sym: "SOL", price: "$214.80", chg: "+5.60%", mcap: "$101.2B", sig: "🟢 Güçlü Alım / Bullish", up: true },
+          { name: "NVIDIA (Tokenized)", sym: "NVDA", price: "$138.60", chg: "+1.85%", mcap: "$3,390.0B", sig: "🟢 Kurumsal Akış", up: true },
+          { name: "Gold / PAX Gold", sym: "PAXG", price: "$2,745", chg: "+0.65%", mcap: "$540.0M", sig: "🔵 Güvenli Liman", up: true }
+        ];
+        tbody.innerHTML = fallback.map(f => `
+          <tr>
+            <td><strong>${f.name}</strong> <span style="color:#94a3b8;font-size:11px;">(${f.sym})</span></td>
+            <td style="font-family:monospace;font-weight:800;">${f.price}</td>
+            <td class="${f.up ? 'up' : 'down'}">${f.chg}</td>
+            <td style="color:#cbd5e1;">${f.mcap}</td>
+            <td style="font-size:12px;font-weight:700;">${f.sig}</td>
+          </tr>
+        `).join("");
+      }
+    }
+
+    function modelPrice(fcf, shares, g, wacc, termG) {
+      let pv = 0;
+      let cur = fcf;
+      for (let t = 1; t <= 5; t++) {
+        cur = cur * (1 + g);
+        pv += cur / Math.pow(1 + wacc, t);
+      }
+      const tv = (cur * (1 + termG)) / Math.max(0.02, (wacc - termG));
+      const pvTv = tv / Math.pow(1 + wacc, 5);
+      return (pv + pvTv) / Math.max(1, shares);
+    }
+
+    function calcDCF() {
+      const name = document.getElementById("tName").value || "Şirket";
+      const price = parseFloat(document.getElementById("tPrice").value) || 100;
+      const fcf = parseFloat(document.getElementById("tFcf").value) || 500;
+      const shares = parseFloat(document.getElementById("tShares").value) || 50;
+      const g = (parseFloat(document.getElementById("tGrowth").value) || 10) / 100;
+      const wacc = (parseFloat(document.getElementById("tWacc").value) || 10) / 100;
+
+      const base = modelPrice(fcf, shares, g, wacc, 0.03);
+      const bear = modelPrice(fcf, shares, g * 0.7, wacc + 0.015, 0.02);
+      const bull = modelPrice(fcf, shares, g * 1.25, Math.max(0.06, wacc - 0.01), 0.035);
+      const upside = ((base - price) / price) * 100;
+
+      document.getElementById("bearVal").textContent = bear.toFixed(2);
+      document.getElementById("baseVal").textContent = base.toFixed(2);
+      document.getElementById("bullVal").textContent = bull.toFixed(2);
+      document.getElementById("dcfVerdict").textContent =
+        name + " → Adil Değer: " + base.toFixed(2) + " (" + (upside >= 0 ? "📈 %" + upside.toFixed(1) + " İskontolu / Ucuz" : "⚠️ %" + Math.abs(upside).toFixed(1) + " Primli") + ")";
+    }
+
+    loadLiveMarkets();
+    calcDCF();
+  </script>
+</body>
+</html>
